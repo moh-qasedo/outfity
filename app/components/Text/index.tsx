@@ -1,5 +1,6 @@
 import React, {memo, useMemo} from 'react';
 import {StyleSheet, Text as RNText, TextProps} from 'react-native';
+import CONSTANTS from '../../constants';
 
 const Text = ({style, ...restProps}: TextProps) => {
   const textStyle = useMemo(
@@ -13,6 +14,7 @@ export default memo(Text);
 
 const styles = StyleSheet.create({
   text: {
-    fontFamily: 'Lato',
+    color: CONSTANTS.COLORS.BLACK,
+    fontFamily: CONSTANTS.FONT_FAMILIES.LATO,
   },
 });
