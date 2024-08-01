@@ -1,5 +1,5 @@
 import {Dimensions} from 'react-native';
-import {FontWeight} from '../types';
+import {FontWeight, Language, Orientation, Platform} from '../types';
 
 const {width, height} = Dimensions.get('window');
 
@@ -10,6 +10,18 @@ const CONSTANTS = {
     SLIDE_HEIGHT: 0.61 * height,
     SLIDE_TITLE_CONTAINER_HEIGHT: 100,
     SLIDE_BORDER_RADIUS: 75,
+  },
+  PLATFORM: {
+    ANDROID: 'android' as Platform,
+    IOS: 'ios' as Platform,
+  },
+  LANGUAGE: {
+    ENGLISH: 'en' as Language,
+    ARABIC: 'ar' as Language,
+  },
+  ORIENTATION: {
+    VERTICAL: 'vertical' as Orientation,
+    HORIZONTAL: 'horizontal' as Orientation,
   },
   COLORS: {
     WHITE: 'white',
