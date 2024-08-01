@@ -5,9 +5,9 @@ import {getSlideTitleTransformation} from '../../../utils';
 import {SlideModel} from '../../../models';
 import CONSTANTS from '../../../constants';
 
-export type SlideProps = SlideModel;
+type Props = SlideModel;
 
-const Slide = ({title, right}: SlideProps) => {
+const Slide = ({title, right}: Props) => {
   const titleContainerStyle = useMemo(
     () =>
       StyleSheet.flatten([

@@ -4,12 +4,12 @@ import Slide from './Slide';
 import {SlideModel} from '../../models';
 import CONSTANTS from '../../constants';
 
-type SliderProps = {
+type Props = {
   slides: SlideModel[];
   animatedSlideValue: Animated.Value;
 };
 
-const Slider = ({slides, animatedSlideValue}: SliderProps) => {
+const Slider = ({slides, animatedSlideValue}: Props) => {
   const onScroll = useMemo(
     () =>
       Animated.event(
