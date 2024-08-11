@@ -1,25 +1,19 @@
-import React, {memo, useMemo} from 'react';
-import {Animated} from 'react-native';
+import React, {memo, RefObject} from 'react';
+import {Animated, NativeScrollEvent, NativeSyntheticEvent} from 'react-native';
 import Slide from '../Slide';
 import {SlideModel} from '../../models';
 import CONSTANTS from '../../constants';
 
 type Props = {
+  sliderRef: RefObject<Animated.FlatList>;
   slides: SlideModel[];
-  animatedSlideValue: Animated.Value;
+  onScroll: (event: NativeSyntheticEvent<NativeScrollEvent>) => void;
 };
 
-const Slider = ({slides, animatedSlideValue}: Props) => {
-  const onScroll = useMemo(
-    () =>
-      Animated.event(
-        [{nativeEvent: {contentOffset: {x: animatedSlideValue}}}],
-        {useNativeDriver: true},
-      ),
-    [animatedSlideValue],
-  );
+const Slider = ({sliderRef, slides, onScroll}: Props) => {
   return (
     <Animated.FlatList
+      ref={sliderRef}
       data={slides}
       keyExtractor={item => item.title}
       renderItem={({item}) => <Slide {...item} />}

@@ -1,6 +1,5 @@
 import React, {memo, useMemo} from 'react';
 import {StyleSheet, View} from 'react-native';
-import DotsPaginator from '../DotsPaginator';
 import Button from '../Button';
 import Spacer from '../Spacer';
 import Text from '../Text';
@@ -9,28 +8,26 @@ import CONSTANTS from '../../constants';
 
 type Props = {
   slide: SlideModel;
-  index: number;
-  numberOfSlides: number;
+  last: boolean;
+  onPress: () => void;
 };
 
-const SubSlide = ({slide, index, numberOfSlides}: Props) => {
+const SubSlide = ({slide, last, onPress}: Props) => {
   const buttonConfig = useMemo(
     () =>
-      index == numberOfSlides - 1
+      last
         ? {varient: CONSTANTS.VARIENT.PRIMARY, label: 'Let’s get started'}
         : {varient: CONSTANTS.VARIENT.DEFAULT, label: 'Next'},
-    [index, numberOfSlides],
+    [last],
   );
   return (
     <View style={styles.slideContent}>
-      <DotsPaginator activeIndex={index} numberOfDots={numberOfSlides} />
-      <Spacer width={1} height={40} />
       <Text style={styles.subtitle}>{slide.subtitle}</Text>
       <Spacer width={1} height={12} />
       <Text style={styles.description}>{slide.description}</Text>
       <Spacer width={1} height={40} />
       <Button
-        onPress={() => {}}
+        onPress={onPress}
         label={buttonConfig.label}
         varient={buttonConfig.varient}
         style={styles.nextButton}
