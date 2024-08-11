@@ -1,9 +1,9 @@
 import React, {memo, useMemo} from 'react';
 import {StyleSheet, View} from 'react-native';
-import Text from '../../Text';
-import {getSlideTitleTransformation} from '../../../utils';
-import {SlideModel} from '../../../models';
-import CONSTANTS from '../../../constants';
+import Text from '../Text';
+import {getSlideTitleTransformation} from '../../utils';
+import {SlideModel} from '../../models';
+import CONSTANTS from '../../constants';
 
 type Props = SlideModel;
 

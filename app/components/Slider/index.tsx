@@ -1,6 +1,6 @@
 import React, {memo, useMemo} from 'react';
 import {Animated} from 'react-native';
-import Slide from './Slide';
+import Slide from '../Slide';
 import {SlideModel} from '../../models';
 import CONSTANTS from '../../constants';
 
