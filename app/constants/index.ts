@@ -1,5 +1,5 @@
 import {Dimensions} from 'react-native';
-import {FontWeight, Language, Orientation, Platform} from '../types';
+import {FontWeight, Language, Orientation, Platform, Varient} from '../types';
 
 const {width, height} = Dimensions.get('window');
 
@@ -23,10 +23,22 @@ const CONSTANTS = {
     VERTICAL: 'vertical' as Orientation,
     HORIZONTAL: 'horizontal' as Orientation,
   },
+  VARIENT: {
+    DEFAULT: 'default' as Varient,
+    PRIMARY: 'primary' as Varient,
+    SECONDARY: 'secondary' as Varient,
+    OUTLINED: 'outlined' as Varient,
+  },
   COLORS: {
+    TRANSPARENT: 'transparent',
     WHITE: 'white',
     BLACK: 'black',
+    BLACK10: '#00000019',
+    BLACK20: '#00000033',
     SLATE_GRAY: 'slategray',
+    LIGHT_GRAY: '#0C0D340D',
+    GREEN: '#2CB9B0',
+    GREEN30: '#2CB9B04D',
   },
   FONT_FAMILIES: {
     LATO: 'Lato',

@@ -5,3 +5,5 @@ export type Orientation = 'vertical' | 'horizontal';
 export type Platform = 'android' | 'ios';
 
 export type Language = 'en' | 'ar';
+
+export type Varient = 'primary' | 'secondary' | 'outline' | 'default' | 'text';
