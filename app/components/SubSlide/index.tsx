@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useMemo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import DotsPaginator from '../DotsPaginator';
 import Button from '../Button';
@@ -14,6 +14,13 @@ type Props = {
 };
 
 const SubSlide = ({slide, index, numberOfSlides}: Props) => {
+  const buttonConfig = useMemo(
+    () =>
+      index == numberOfSlides - 1
+        ? {varient: CONSTANTS.VARIENT.PRIMARY, label: 'Let’s get started'}
+        : {varient: CONSTANTS.VARIENT.DEFAULT, label: 'Next'},
+    [index, numberOfSlides],
+  );
   return (
     <View style={styles.slideContent}>
       <DotsPaginator activeIndex={index} numberOfDots={numberOfSlides} />
@@ -24,8 +31,8 @@ const SubSlide = ({slide, index, numberOfSlides}: Props) => {
       <Spacer width={1} height={40} />
       <Button
         onPress={() => {}}
-        label="Next"
-        varient="default"
+        label={buttonConfig.label}
+        varient={buttonConfig.varient}
         style={styles.nextButton}
       />
     </View>
@@ -42,8 +49,8 @@ const styles = StyleSheet.create({
     padding: 56,
   },
   subtitle: {
+    fontFamily: CONSTANTS.FONT_FAMILIES.LATO_BOLD,
     fontSize: CONSTANTS.FONT_SIZES.X24,
-    fontWeight: CONSTANTS.FONT_WEIGHTS.BOLD,
     lineHeight: 30,
     textAlign: 'center',
   },

@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontWeight: CONSTANTS.FONT_WEIGHTS.BOLD,
+    fontFamily: CONSTANTS.FONT_FAMILIES.LATO_BOLD,
     fontSize: CONSTANTS.FONT_SIZES.X80,
     lineHeight: CONSTANTS.FONT_SIZES.X80,
     color: CONSTANTS.COLORS.WHITE,

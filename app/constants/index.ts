@@ -41,7 +41,9 @@ const CONSTANTS = {
     GREEN30: '#2CB9B04D',
   },
   FONT_FAMILIES: {
-    LATO: 'Lato',
+    LATO_REGULAR: 'Lato-Regular',
+    LATO_BOLD: 'Lato-Bold',
+    LATO_BLACK: 'Lato-Black',
   },
   FONT_WEIGHTS: {
     REGULAR: '400' as FontWeight,

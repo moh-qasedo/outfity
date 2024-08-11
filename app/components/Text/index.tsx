@@ -15,8 +15,7 @@ export default memo(Text);
 const styles = StyleSheet.create({
   text: {
     color: CONSTANTS.COLORS.BLACK,
-    fontFamily: CONSTANTS.FONT_FAMILIES.LATO,
-    fontWeight: CONSTANTS.FONT_WEIGHTS.REGULAR,
+    fontFamily: CONSTANTS.FONT_FAMILIES.LATO_REGULAR,
     fontSize: CONSTANTS.FONT_SIZES.X16,
   },
 });
