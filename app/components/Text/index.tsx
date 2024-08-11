@@ -16,5 +16,7 @@ const styles = StyleSheet.create({
   text: {
     color: CONSTANTS.COLORS.BLACK,
     fontFamily: CONSTANTS.FONT_FAMILIES.LATO,
+    fontWeight: CONSTANTS.FONT_WEIGHTS.REGULAR,
+    fontSize: CONSTANTS.FONT_SIZES.X16,
   },
 });
