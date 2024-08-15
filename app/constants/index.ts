@@ -28,6 +28,7 @@ const CONSTANTS = {
     PRIMARY: 'primary' as Varient,
     SECONDARY: 'secondary' as Varient,
     OUTLINED: 'outlined' as Varient,
+    TEXT: 'text' as Varient,
   },
   COLORS: {
     TRANSPARENT: 'transparent',
@@ -39,6 +40,7 @@ const CONSTANTS = {
     LIGHT_GRAY: '#0C0D340D',
     GREEN: '#2CB9B0',
     GREEN30: '#2CB9B04D',
+    BEIGE: '#F3F0EF',
   },
   FONT_FAMILIES: {
     LATO_REGULAR: 'Lato-Regular',

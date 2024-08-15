@@ -39,6 +39,8 @@ const Button = ({
           backgroundColor:
             varient == CONSTANTS.VARIENT.PRIMARY
               ? CONSTANTS.COLORS.GREEN
+              : varient == CONSTANTS.VARIENT.TEXT
+              ? CONSTANTS.COLORS.TRANSPARENT
               : CONSTANTS.COLORS.LIGHT_GRAY,
         },
         style,
