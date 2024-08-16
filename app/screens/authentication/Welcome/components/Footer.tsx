@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
   footerOverlay: {
     backgroundColor: CONSTANTS.COLORS.WHITE,
-    borderTopLeftRadius: CONSTANTS.DIMENSIONS.SLIDE_BORDER_RADIUS,
+    borderTopLeftRadius: CONSTANTS.DIMENSIONS.BORDER_RADIUS,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 65,

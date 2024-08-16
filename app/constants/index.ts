@@ -9,7 +9,7 @@ const CONSTANTS = {
     SCREEN_HEIGHT: height,
     SLIDE_HEIGHT: 0.61 * height,
     SLIDE_TITLE_CONTAINER_HEIGHT: 100,
-    SLIDE_BORDER_RADIUS: 75,
+    BORDER_RADIUS: 75,
   },
   PLATFORM: {
     ANDROID: 'android' as Platform,

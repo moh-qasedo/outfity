@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   footerOverlay: {
     flexDirection: 'row',
     backgroundColor: CONSTANTS.COLORS.WHITE,
-    borderTopLeftRadius: CONSTANTS.DIMENSIONS.SLIDE_BORDER_RADIUS,
+    borderTopLeftRadius: CONSTANTS.DIMENSIONS.BORDER_RADIUS,
     paddingTop: 40,
     paddingBottom: 10,
   },

@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     flex: 1,
     backgroundColor: CONSTANTS.COLORS.BEIGE,
-    borderBottomRightRadius: CONSTANTS.DIMENSIONS.SLIDE_BORDER_RADIUS,
+    borderBottomRightRadius: CONSTANTS.DIMENSIONS.BORDER_RADIUS,
   },
   image: {
     width: '100%',

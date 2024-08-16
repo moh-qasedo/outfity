@@ -29,6 +29,6 @@ export default memo(Header);
 const styles = StyleSheet.create({
   slider: {
     flex: 1,
-    borderBottomRightRadius: CONSTANTS.DIMENSIONS.SLIDE_BORDER_RADIUS,
+    borderBottomRightRadius: CONSTANTS.DIMENSIONS.BORDER_RADIUS,
   },
 });
