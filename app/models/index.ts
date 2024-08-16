@@ -4,4 +4,5 @@ export type SlideModel = {
   description: string;
   right: boolean;
   color: string;
+  image: number;
 };

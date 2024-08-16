@@ -1,9 +1,9 @@
 import React, {useMemo} from 'react';
 import {Animated, StyleSheet, View} from 'react-native';
-import DotsPaginator from '../../../../../components/DotsPaginator';
-import SubSlide from '../../../../../components/SubSlide';
-import {SlideModel} from '../../../../../models';
-import CONSTANTS from '../../../../../constants';
+import DotsPaginator from '../../../../components/DotsPaginator';
+import SubSlide from '../../../../components/SubSlide';
+import {SlideModel} from '../../../../models';
+import CONSTANTS from '../../../../constants';
 
 type Props = {
   slides: SlideModel[];
@@ -11,6 +11,7 @@ type Props = {
   activeSlideIndex: number;
   slideOffset: Animated.AnimatedInterpolation<number>;
   onPressNext: (offset: number) => void;
+  onGetStarted: () => void;
 };
 
 const Footer = ({
@@ -19,6 +20,7 @@ const Footer = ({
   activeSlideIndex,
   slideOffset,
   onPressNext,
+  onGetStarted,
 }: Props) => {
   const footerUnderlayStyle = useMemo(
     () =>
@@ -41,7 +43,7 @@ const Footer = ({
   );
 
   return (
-    <View style={styles.footer}>
+    <View>
       <View style={styles.footerPaginator}>
         <DotsPaginator
           activeIndex={activeSlideIndex}
@@ -56,7 +58,9 @@ const Footer = ({
             last={index == slides.length - 1}
             slide={slide}
             onPress={() =>
-              onPressNext((index + 1) * CONSTANTS.DIMENSIONS.SCREEN_WIDTH)
+              index == slides.length - 1
+                ? onGetStarted()
+                : onPressNext((index + 1) * CONSTANTS.DIMENSIONS.SCREEN_WIDTH)
             }
           />
         ))}
@@ -68,15 +72,12 @@ const Footer = ({
 export default Footer;
 
 const styles = StyleSheet.create({
-  footer: {
-    flex: 0.39,
-  },
   footerUnderlay: StyleSheet.absoluteFillObject,
   footerOverlay: {
-    flex: 1,
     flexDirection: 'row',
     backgroundColor: CONSTANTS.COLORS.WHITE,
     borderTopLeftRadius: CONSTANTS.DIMENSIONS.SLIDE_BORDER_RADIUS,
+    paddingVertical: 40,
   },
   footerPaginator: {
     position: 'absolute',

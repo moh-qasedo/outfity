@@ -5,9 +5,9 @@ import {
   NativeSyntheticEvent,
   StyleSheet,
 } from 'react-native';
-import Slider from '../../../../../components/Slider';
-import {SlideModel} from '../../../../../models';
-import CONSTANTS from '../../../../../constants';
+import Slider from '../../../../components/Slider';
+import {SlideModel} from '../../../../models';
+import CONSTANTS from '../../../../constants';
 
 type Props = {
   sliderRef: RefObject<Animated.FlatList>;
@@ -28,7 +28,7 @@ export default memo(Header);
 
 const styles = StyleSheet.create({
   slider: {
-    flex: 0.61,
+    flex: 1,
     borderBottomRightRadius: CONSTANTS.DIMENSIONS.SLIDE_BORDER_RADIUS,
   },
 });

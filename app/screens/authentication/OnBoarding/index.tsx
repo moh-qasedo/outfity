@@ -1,14 +1,19 @@
-import React, {useCallback, useMemo, useRef, useState} from 'react';
+import React, {memo, useCallback, useMemo, useRef, useState} from 'react';
 import {Animated, NativeScrollEvent, NativeSyntheticEvent} from 'react-native';
+import {StackScreenProps} from '@react-navigation/stack';
+import {AuthenticationStackParamList} from '../../../routes';
 import Screen from '../../../components/Screen';
 import Header from './components/Header';
-import CONSTANTS from '../../../constants';
-import {slides} from '../../../data';
 import Footer from './components/Footer';
+import {slides} from '../../../data';
+import CONSTANTS from '../../../constants';
 
-type Props = {};
+export type Props = StackScreenProps<
+  AuthenticationStackParamList,
+  'OnBoarding'
+>;
 
-const OnBoarding = (props: Props) => {
+const OnBoarding = ({navigation}: Props) => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const sliderRef = useRef<Animated.FlatList>(null);
   const animatedSlideValue = new Animated.Value(0);
@@ -34,14 +39,15 @@ const OnBoarding = (props: Props) => {
         {
           useNativeDriver: false,
           listener: (e: NativeSyntheticEvent<NativeScrollEvent>) => {
-            setActiveSlideIndex(
-              parseInt(
-                (
-                  e.nativeEvent.contentOffset.x /
-                  CONSTANTS.DIMENSIONS.SCREEN_WIDTH
-                ).toString(),
-              ),
-            );
+            const divisionResult =
+              e.nativeEvent.contentOffset.x / CONSTANTS.DIMENSIONS.SCREEN_WIDTH;
+            const tokens = divisionResult.toString().split('.');
+            const points = tokens.length > 1 ? tokens[1][0] : '0';
+            const offset =
+              parseInt(points) >= 5
+                ? parseInt(divisionResult.toString()) + 1
+                : parseInt(divisionResult.toString());
+            setActiveSlideIndex(offset);
           },
         },
       ),
@@ -50,10 +56,16 @@ const OnBoarding = (props: Props) => {
   );
 
   const handleSlideToNextSlide = useCallback(
-    (offset: number) =>
-      sliderRef.current?.scrollToOffset({offset: offset, animated: true}),
+    (offset: number) => {
+      console.log(offset);
+      sliderRef.current?.scrollToOffset({offset: offset, animated: true});
+    },
     [sliderRef],
   );
+
+  const handleNavigateToWelcomeScreen = useCallback(() => {
+    navigation.navigate('Welcome');
+  }, [navigation]);
 
   return (
     <Screen>
@@ -69,9 +81,10 @@ const OnBoarding = (props: Props) => {
         activeSlideIndex={activeSlideIndex}
         slideOffset={animatedOffset}
         onPressNext={handleSlideToNextSlide}
+        onGetStarted={handleNavigateToWelcomeScreen}
       />
     </Screen>
   );
 };
 
-export default OnBoarding;
+export default memo(OnBoarding);

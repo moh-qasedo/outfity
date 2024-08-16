@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
     width: CONSTANTS.DIMENSIONS.SCREEN_WIDTH,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 56,
+    paddingHorizontal: 65,
+    paddingVertical: 40,
   },
   subtitle: {
     fontFamily: CONSTANTS.FONT_FAMILIES.LATO_BOLD,
