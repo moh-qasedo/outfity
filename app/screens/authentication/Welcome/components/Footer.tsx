@@ -2,12 +2,16 @@ import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import Button from '../../../../components/Button';
 import Spacer from '../../../../components/Spacer';
-import CONSTANTS from '../../../../constants';
 import Text from '../../../../components/Text';
+import CONSTANTS from '../../../../constants';
 
-type Props = {};
+type Props = {
+  onLogin: () => void;
+  onCreateAccount: () => void;
+  onForgotPassword: () => void;
+};
 
-const Footer = (props: Props) => {
+const Footer = ({onLogin, onCreateAccount, onForgotPassword}: Props) => {
   return (
     <View>
       <View style={styles.footerUnderlay} />
@@ -19,21 +23,21 @@ const Footer = (props: Props) => {
         </Text>
         <Spacer width={1} height={40} />
         <Button
-          onPress={() => {}}
+          onPress={onLogin}
           label={'Have an account? Login'}
           varient="primary"
           style={styles.button}
         />
         <Spacer width={1} height={16} />
         <Button
-          onPress={() => {}}
+          onPress={onCreateAccount}
           label={'Join us, it’s Free'}
           varient="default"
           style={styles.button}
         />
         <Spacer width={1} height={16} />
         <Button
-          onPress={() => {}}
+          onPress={onForgotPassword}
           label={'Forgot password?'}
           varient="text"
           style={styles.button}
@@ -56,7 +60,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 65,
-    paddingVertical: 80,
+    paddingTop: 65,
+    paddingBottom: 50,
   },
   button: {
     width: '100%',

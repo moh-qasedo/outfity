@@ -57,7 +57,6 @@ const OnBoarding = ({navigation}: Props) => {
 
   const handleSlideToNextSlide = useCallback(
     (offset: number) => {
-      console.log(offset);
       sliderRef.current?.scrollToOffset({offset: offset, animated: true});
     },
     [sliderRef],

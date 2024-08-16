@@ -1,10 +1,10 @@
 import React, {memo, useMemo} from 'react';
 import {Image, StyleSheet, View} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Text from '../Text';
 import {getSlideTitleTransformation} from '../../utils';
 import {SlideModel} from '../../models';
 import CONSTANTS from '../../constants';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 type Props = SlideModel;
 
@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     position: 'absolute',
-    flexDirection: 'row',
     start: 0,
     end: 0,
     bottom: 0,
@@ -63,7 +62,8 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%',
-    alignSelf: 'flex-end',
+    aspectRatio: 1,
+    alignSelf: 'center',
     resizeMode: 'contain',
   },
 });

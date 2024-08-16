@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: CONSTANTS.COLORS.WHITE,
     borderTopLeftRadius: CONSTANTS.DIMENSIONS.SLIDE_BORDER_RADIUS,
-    paddingVertical: 40,
+    paddingTop: 40,
+    paddingBottom: 10,
   },
   footerPaginator: {
     position: 'absolute',
