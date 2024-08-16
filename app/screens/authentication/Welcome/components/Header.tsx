@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <View style={containerStyle}>
       <Image
-        source={require('../../../../assets/images/outfit-5.png')}
+        source={require('../../../../assets/images/outfits/outfit-5.png')}
         style={styles.image}
       />
     </View>

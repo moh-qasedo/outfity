@@ -24,8 +24,8 @@ const Button = ({
   const {containerStyle, textStyle} = useMemo(
     () => ({
       textStyle: StyleSheet.flatten([
+        styles.label,
         {
-          fontFamily: CONSTANTS.FONT_FAMILIES.LATO_BOLD,
           color:
             varient == CONSTANTS.VARIENT.PRIMARY
               ? CONSTANTS.COLORS.WHITE
@@ -72,9 +72,13 @@ export default memo(Button);
 const styles = StyleSheet.create({
   pressable: {
     width: '100%',
-    paddingHorizontal: 50,
+    paddingHorizontal: 32,
     paddingVertical: 16,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  label: {
+    fontFamily: CONSTANTS.FONT_FAMILIES.LATO_BOLD,
+    textAlign: 'center',
   },
 });
