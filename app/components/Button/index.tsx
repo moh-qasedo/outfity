@@ -10,6 +10,7 @@ type Props = {
   labelStyle?: TextStyle;
   onPress: () => void;
   style?: ViewStyle;
+  contentStyle?: ViewStyle;
   varient: Varient;
 };
 
@@ -19,6 +20,7 @@ const Button = ({
   labelStyle,
   onPress,
   style,
+  contentStyle,
   varient = CONSTANTS.VARIENT.PRIMARY,
 }: Props) => {
   const {containerStyle, textStyle} = useMemo(
@@ -53,8 +55,9 @@ const Button = ({
       <Pressable
         onPress={onPress}
         style={({pressed}) => [
+          styles.pressable,
+          contentStyle,
           {
-            ...styles.pressable,
             borderRadius,
             backgroundColor: pressed
               ? CONSTANTS.COLORS.BLACK10
