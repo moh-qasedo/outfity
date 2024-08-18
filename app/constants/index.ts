@@ -52,8 +52,11 @@ const CONSTANTS = {
     BOLD: '600' as FontWeight,
   },
   FONT_SIZES: {
+    X12: 12,
+    X14: 14,
     X16: 16,
     X24: 24,
+    X28: 28,
     X80: 80,
   },
 };

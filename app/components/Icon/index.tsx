@@ -1,5 +1,5 @@
 import React, {memo, useMemo} from 'react';
-import {ViewStyle} from 'react-native';
+import {ColorValue, ViewStyle} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -18,7 +18,7 @@ type Props = {
   type: IconType;
   name: string;
   size: number;
-  color: string;
+  color: ColorValue;
   style?: ViewStyle;
 };
 
