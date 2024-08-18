@@ -1,4 +1,5 @@
 import React, {memo, useMemo} from 'react';
+import {ViewStyle} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -11,28 +12,14 @@ import Foundation from 'react-native-vector-icons/Foundation';
 import Octicons from 'react-native-vector-icons/Octicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Zocial from 'react-native-vector-icons/Zocial';
-import {ViewStyle} from 'react-native';
-
-type IconType =
-  | 'MaterialIcons'
-  | 'Ionicons'
-  | 'FontAwesome'
-  | 'FontAwesome5'
-  | 'Entypo'
-  | 'AntDesign'
-  | 'Feather'
-  | 'EvilIcons'
-  | 'Foundation'
-  | 'Octicons'
-  | 'SimpleLineIcons'
-  | 'Zocial';
+import {IconType} from '../../types';
 
 type Props = {
   type: IconType;
   name: string;
   size: number;
-  style: ViewStyle;
   color: string;
+  style?: ViewStyle;
 };
 
 const iconSets: {[key in IconType]: any} = {
