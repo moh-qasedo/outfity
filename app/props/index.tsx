@@ -19,4 +19,5 @@ export type ButtonProps = {
   contentStyle?: ViewStyle;
   icon?: IconProps;
   varient?: Varient;
+  size?: number;
 };

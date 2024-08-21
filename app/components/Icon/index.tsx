@@ -1,5 +1,5 @@
 import React, {memo, useMemo} from 'react';
-import {ColorValue, ViewStyle} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -13,14 +13,7 @@ import Octicons from 'react-native-vector-icons/Octicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Zocial from 'react-native-vector-icons/Zocial';
 import {IconType} from '../../types';
-
-type Props = {
-  type: IconType;
-  name: string;
-  size: number;
-  color: ColorValue;
-  style?: ViewStyle;
-};
+import {IconProps} from '../../props';
 
 const iconSets: {[key in IconType]: any} = {
   MaterialIcons,
@@ -37,9 +30,24 @@ const iconSets: {[key in IconType]: any} = {
   Zocial,
 };
 
-const Icon = ({type, ...restProps}: Props) => {
+const Icon = ({type, style, backgroundColor, ...restProps}: IconProps) => {
   const IconComponent = useMemo(() => iconSets[type], [type]);
-  return <IconComponent {...restProps} />;
+  const containerStyle = useMemo(
+    () => StyleSheet.flatten([styles.container, {backgroundColor}]),
+    [backgroundColor],
+  );
+  return (
+    <View style={containerStyle}>
+      <IconComponent style={style} {...restProps} />
+    </View>
+  );
 };
 
 export default memo(Icon);
+
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});

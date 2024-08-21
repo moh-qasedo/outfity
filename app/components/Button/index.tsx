@@ -1,18 +1,9 @@
 import React, {memo, useMemo} from 'react';
-import {Pressable, StyleSheet, TextStyle, View, ViewStyle} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
 import Text from '../Text';
-import {Varient} from '../../types';
+import Icon from '../Icon';
+import {ButtonProps} from '../../props';
 import CONSTANTS from '../../constants';
-
-type Props = {
-  borderRadius?: number;
-  label: string;
-  labelStyle?: TextStyle;
-  onPress: () => void;
-  style?: ViewStyle;
-  contentStyle?: ViewStyle;
-  varient: Varient;
-};
 
 const Button = ({
   borderRadius = 100,
@@ -21,8 +12,9 @@ const Button = ({
   onPress,
   style,
   contentStyle,
+  icon,
   varient = CONSTANTS.VARIENT.PRIMARY,
-}: Props) => {
+}: ButtonProps) => {
   const {containerStyle, textStyle} = useMemo(
     () => ({
       textStyle: StyleSheet.flatten([
@@ -64,7 +56,8 @@ const Button = ({
               : CONSTANTS.COLORS.TRANSPARENT,
           },
         ]}>
-        <Text style={textStyle}>{label}</Text>
+        {label && <Text style={textStyle}>{label}</Text>}
+        {icon && <Icon {...icon} />}
       </Pressable>
     </View>
   );
@@ -74,11 +67,13 @@ export default memo(Button);
 
 const styles = StyleSheet.create({
   pressable: {
+    flexDirection: 'row',
     width: '100%',
     paddingHorizontal: 32,
     paddingVertical: 16,
     justifyContent: 'center',
     alignItems: 'center',
+    gap: 12,
   },
   label: {
     fontFamily: CONSTANTS.FONT_FAMILIES.LATO_BOLD,
