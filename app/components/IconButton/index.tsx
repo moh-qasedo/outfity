@@ -4,7 +4,7 @@ import Button from '../Button';
 import {ButtonProps} from '../../props';
 import CONSTANTS from '../../constants';
 
-const IconButton = ({size = 60, ...restProps}: ButtonProps) => {
+const IconButton = ({size = 44, ...restProps}: ButtonProps) => {
   const contentStyle = useMemo(
     () =>
       StyleSheet.flatten([

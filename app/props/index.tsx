@@ -20,4 +20,5 @@ export type ButtonProps = {
   icon?: IconProps;
   varient?: Varient;
   size?: number;
+  pressedColor?: ColorValue;
 };

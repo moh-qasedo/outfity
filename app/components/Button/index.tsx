@@ -13,6 +13,7 @@ const Button = ({
   style,
   contentStyle,
   icon,
+  pressedColor = CONSTANTS.COLORS.BLACK10,
   varient = CONSTANTS.VARIENT.PRIMARY,
 }: ButtonProps) => {
   const {containerStyle, textStyle} = useMemo(
@@ -52,7 +53,7 @@ const Button = ({
           {
             borderRadius,
             backgroundColor: pressed
-              ? CONSTANTS.COLORS.BLACK10
+              ? pressedColor
               : CONSTANTS.COLORS.TRANSPARENT,
           },
         ]}>
