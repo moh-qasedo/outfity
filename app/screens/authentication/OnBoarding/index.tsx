@@ -24,7 +24,7 @@ const OnBoarding = ({navigation}: Props) => {
         inputRange: slides.map(
           (_, index) => index * CONSTANTS.DIMENSIONS.SCREEN_WIDTH,
         ),
-        outputRange: slides.map(slide => slide.color),
+        outputRange: slides.map(slide => slide.color) as string[],
       }),
       animatedOffset: animatedSlideValue.interpolate({
         inputRange: slides.map(
