@@ -20,8 +20,8 @@ const Welcome = ({navigation}: Props) => {
       <Header />
       <Footer
         onLogin={() => handleNavigation('Login')}
-        onCreateAccount={() => handleNavigation('Login')}
-        onForgotPassword={() => handleNavigation('Login')}
+        onCreateAccount={() => handleNavigation('CreateAccount')}
+        onForgotPassword={() => handleNavigation('ForgotPassword')}
       />
     </Screen>
   );
