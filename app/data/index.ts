@@ -1,4 +1,4 @@
-import {SlideModel} from '../models';
+import {LayoutModel, SlideModel} from '../models';
 
 export const slides: SlideModel[] = [
   {
@@ -38,3 +38,45 @@ export const slides: SlideModel[] = [
     image: require('../assets/images/outfits/outfit-6.png'),
   },
 ];
+
+export const layouts = {
+  login: {
+    id: 'login',
+    items: [
+      {
+        id: '1',
+        imageUrl: require('../assets/images/patterns/pattern-1.png'),
+      },
+      {
+        id: '2',
+        backgroundColor: '#0C0D34',
+      },
+    ],
+  } as LayoutModel,
+  createAccount: {
+    id: 'createAccount',
+    items: [
+      {
+        id: '1',
+        imageUrl: require('../assets/images/patterns/pattern-2.png'),
+      },
+      {
+        id: '2',
+        backgroundColor: '#0C0D34',
+      },
+    ],
+  } as LayoutModel,
+  forgotPassword: {
+    id: 'forgotPassword',
+    items: [
+      {
+        id: '1',
+        imageUrl: require('../assets/images/patterns/pattern-3.png'),
+      },
+      {
+        id: '2',
+        backgroundColor: '#0C0D34',
+      },
+    ],
+  } as LayoutModel,
+};
